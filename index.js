@@ -4,6 +4,7 @@ const dotenv = require('dotenv')
 const userRouter = require('./src/routes/user')
 const authRouter = require('./src/routes/auth')
 const purchaseRouter = require('./src/routes/purchase')
+const projectRouter = require('./src/routes/project')
 const auth = require("./src/middleware/auth");
 
 dotenv.config();
@@ -21,7 +22,8 @@ app.use(express.urlencoded({extended:false}))
  */
 app.use('', authRouter)
 app.use('/purchase', purchaseRouter)
-app.use('/user', auth, userRouter)
+app.use('/project', projectRouter)
+app.use('/user', userRouter)
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {

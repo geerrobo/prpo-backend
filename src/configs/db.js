@@ -41,7 +41,7 @@ CREATE TABLE products (
 
 CREATE TABLE purchase (
     id int(255) NOT NULL UNIQUE AUTO_INCREMENT,
-    code varchar(255) NOT NULL,
+    code varchar(255) NOT NULL UNIQUE,
     status varchar(10) DEFAULT '01',
     type varchar(10) DEFAULT '',
     sub_type varchar(10) DEFAULT '',
@@ -102,12 +102,15 @@ CREATE TABLE purchase_item (
     FOREIGN KEY (purchase_id) REFERENCES purchase(id) ON DELETE CASCADE
 );
 
-CREATE TABLE products (
-    id bigint(20) NOT NULL UNIQUE AUTO_INCREMENT,
-    
+CREATE TABLE project (
+    id int(255) NOT NULL UNIQUE AUTO_INCREMENT,
+    code varchar(255) NOT NULL UNIQUE,
+    name int NOT NULL,
+    startAt datetime(6),
+    endAt datetime(6),
     createAt datetime(6),
     updateAt datetime(6),
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
 );
 
  */

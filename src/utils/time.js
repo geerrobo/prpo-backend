@@ -30,7 +30,8 @@ const getDateTime = () => {
         datetime = `${years}-${months}-${days} ${hours}:${(String(mins).length === 1) ? '0' + String(mins) : String(mins)}:${(String(seconds).length === 1) ? '0' + String(seconds) : String(seconds)}`
     }
 
-    return datetime
+    // return datetime
+    return new Date().toISOString().slice(0, 19).replace('T', ' ');
 }
 
 module.exports = { getDateTime }
