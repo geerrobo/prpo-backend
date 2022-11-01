@@ -3,7 +3,7 @@ const env = process.env
 const db = {
     host: env.DB_HOST || '0.0.0.0',
     user: env.DB_USER || 'root',
-    password: env.DB_PASSWORD || 'geerhro555',
+    password: env.DB_PASSWORD || 'password',
     database: env.DB_NAME || 'prpo',
     port: env.DB_PORT || 3306,
     connectionLimit: 5
